@@ -66,7 +66,7 @@ export class Viewer {
 			environment:
 				options.preset === Preset.ASSET_GENERATOR
 					? environments.find((e) => e.id === 'footprint-court').name
-					: environments[1].name,
+					: environments[2].name,
 			background: false,
 			playbackSpeed: 1.0,
 			actionStates: {},
@@ -78,13 +78,13 @@ export class Viewer {
 
 			// Lights
 			punctualLights: true,
-			exposure: 0.0,
+			exposure: 1.25,
 			toneMapping: LinearToneMapping,
 			ambientIntensity: 0.3,
 			ambientColor: '#FFFFFF',
 			directIntensity: 0.8 * Math.PI, // TODO(#116)
 			directColor: '#FFFFFF',
-			bgColor: '#191919',
+			bgColor: '#252525',
 
 			pointSize: 1.0,
 		};
