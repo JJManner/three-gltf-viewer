@@ -61,12 +61,13 @@ export class Viewer {
 		this.mixer = null;
 		this.clips = [];
 		this.gui = null;
+		this.rotateCamera = -1.5; // use value 2 or -2 to rotate and scale the model camera view, value should be included in the opening link
 
 		this.state = {
 			environment:
 				options.preset === Preset.ASSET_GENERATOR
 					? environments.find((e) => e.id === 'footprint-court').name
-					: environments[2].name,
+					: environments[2].name, // this defines the environment used, no 2 is the Venice map 
 			background: false,
 			playbackSpeed: 1.0,
 			actionStates: {},
@@ -78,13 +79,13 @@ export class Viewer {
 
 			// Lights
 			punctualLights: true,
-			exposure: 1.25,
+			exposure: 1.25, // this exposure varies by the model, value should be included in the opening link. 
 			toneMapping: LinearToneMapping,
 			ambientIntensity: 0.3,
 			ambientColor: '#FFFFFF',
 			directIntensity: 0.8 * Math.PI, // TODO(#116)
 			directColor: '#FFFFFF',
-			bgColor: '#252525',
+			bgColor: '#252525', // this defines the solid background colour
 
 			pointSize: 1.0,
 		};
@@ -269,9 +270,9 @@ export class Viewer {
 			this.defaultCamera.lookAt(new Vector3());
 		} else {
 			this.defaultCamera.position.copy(center);
-			this.defaultCamera.position.x += size / 2.0;
-			this.defaultCamera.position.y += size / 5.0;
-			this.defaultCamera.position.z += size / 2.0;
+			this.defaultCamera.position.x += size / 2.0 * this.rotateCamera;
+			this.defaultCamera.position.y += size / 5.0; 
+			this.defaultCamera.position.z += size / 2.0 * this.rotateCamera;
 			this.defaultCamera.lookAt(center);
 		}
 
