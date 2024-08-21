@@ -61,7 +61,7 @@ export class Viewer {
 		this.mixer = null;
 		this.clips = [];
 		this.gui = null;
-		this.rotateCamera = -1.5; // use value 2 or -2 to rotate and scale the model camera view, value should be included in the opening link
+		this.rotateCamera = -1.5; // use value 3 or -3 to rotate and scale the model camera view, this value should be included in the opening link
 
 		this.state = {
 			environment:
@@ -79,7 +79,7 @@ export class Viewer {
 
 			// Lights
 			punctualLights: true,
-			exposure: 1.25, // this exposure varies by the model, value should be included in the opening link. 
+			exposure: 0, // this exposure varies by the model, this value should be included in the opening link 
 			toneMapping: LinearToneMapping,
 			ambientIntensity: 0.3,
 			ambientColor: '#FFFFFF',
