@@ -61,7 +61,7 @@ export class Viewer {
 		this.mixer = null;
 		this.clips = [];
 		this.gui = null;
-		this.rotateCamera = 1.5; // use a value from 3 to -3 to rotate and scale the model camera view, this value should be included in the opening link
+		this.rotateCamera = 1.5; // use a value from 3 to -3 to rotate and scale the model camera view, THIS VALUE should be included in the opening link
 
 		this.state = {
 			environment:
@@ -79,7 +79,7 @@ export class Viewer {
 
 			// Lights
 			punctualLights: true,
-			exposure: 0, // this exposure varies by the model, this value should be included in the opening link 
+			exposure: 0, // this exposure varies by the model, THIS VALUE should be included in the opening link 
 			toneMapping: LinearToneMapping,
 			ambientIntensity: 0.3,
 			ambientColor: '#FFFFFF',
@@ -88,6 +88,11 @@ export class Viewer {
 			bgColor: '#252525', // this defines the solid background colour
 
 			pointSize: 1.0,
+
+			// Instructions
+			Rotation: "1st button + drag",
+			Pan: "2d button + drag",
+			Zoom: "Scroll up / down",
 		};
 
 		this.prevTime = 0;
@@ -523,6 +528,11 @@ export class Viewer {
 			width: 260,
 			hideable: true,
 		}));
+
+		const infoFolder = gui.addFolder('Help');
+		const text1 = infoFolder.add(this.state, 'Rotation');
+		const text2 = infoFolder.add(this.state, 'Pan');
+		const text3 = infoFolder.add(this.state, 'Zoom');
 
 		// Display controls.
 		const dispFolder = gui.addFolder('Display');
