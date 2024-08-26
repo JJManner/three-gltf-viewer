@@ -61,7 +61,7 @@ export class Viewer {
 		this.mixer = null;
 		this.clips = [];
 		this.gui = null;
-		this.rotateCamera = 1.5; // use a value from 3 to -3 to rotate and scale the model camera view, THIS VALUE should be included in the opening link
+		this.rotateCamera = -2; // use a value from 3 to -3 to rotate and scale the model camera view, THIS VALUE should be included in the opening link
 
 		this.state = {
 			environment:
