@@ -567,7 +567,7 @@ export class Viewer {
 				'ACES Filmic': ACESFilmicToneMapping,
 			}),
 			lightFolder.add(this.state, 'exposure', -10, 10, 0.01),
-			lightFolder.add(this.state, 'punctualLights'),   // lightFolder.add(this.state, 'punctualLights').listen(),
+			lightFolder.add(this.state, 'punctualLights').listen(),
 			lightFolder.add(this.state, 'ambientIntensity', 0, 2),
 			lightFolder.addColor(this.state, 'ambientColor'),
 			lightFolder.add(this.state, 'directIntensity', 0, 4), // TODO(#116)
