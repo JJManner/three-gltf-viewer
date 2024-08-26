@@ -534,6 +534,29 @@ export class Viewer {
 		const text2 = infoFolder.add(this.state, 'Pan');
 		const text3 = infoFolder.add(this.state, 'Zoom');
 
+		// Lighting controls.
+		const lightFolder = gui.addFolder('Lighting');
+		const envMapCtrl = lightFolder.add(
+			this.state,
+			'environment',
+			environments.map((env) => env.name),
+		);
+		envMapCtrl.onChange(() => this.updateEnvironment());
+		const envBackgroundCtrl = lightFolder.add(this.state, 'background');
+		envBackgroundCtrl.onChange(() => this.updateEnvironment());
+		[
+			lightFolder.add(this.state, 'exposure', -10, 10, 0.01),
+			lightFolder.add(this.state, 'punctualLights').listen(),
+			lightFolder.add(this.state, 'toneMapping', {
+				Linear: LinearToneMapping,
+				'ACES Filmic': ACESFilmicToneMapping,
+			}),
+			lightFolder.add(this.state, 'ambientIntensity', 0, 2),
+			lightFolder.addColor(this.state, 'ambientColor'),
+			lightFolder.add(this.state, 'directIntensity', 0, 4), // TODO(#116)
+			lightFolder.addColor(this.state, 'directColor'),
+		].forEach((ctrl) => ctrl.onChange(() => this.updateLights()));
+
 		// Display controls.
 		const dispFolder = gui.addFolder('Display');
 
@@ -550,29 +573,6 @@ export class Viewer {
 		pointSizeCtrl.onChange(() => this.updateDisplay());
 		const bgColorCtrl = dispFolder.addColor(this.state, 'bgColor');
 		bgColorCtrl.onChange(() => this.updateBackground());
-
-		// Lighting controls.
-		const lightFolder = gui.addFolder('Lighting');
-		const envMapCtrl = lightFolder.add(
-			this.state,
-			'environment',
-			environments.map((env) => env.name),
-		);
-		envMapCtrl.onChange(() => this.updateEnvironment());
-		const envBackgroundCtrl = lightFolder.add(this.state, 'background');
-		envBackgroundCtrl.onChange(() => this.updateEnvironment());
-		[
-			lightFolder.add(this.state, 'toneMapping', {
-				Linear: LinearToneMapping,
-				'ACES Filmic': ACESFilmicToneMapping,
-			}),
-			lightFolder.add(this.state, 'exposure', -10, 10, 0.01),
-			lightFolder.add(this.state, 'punctualLights').listen(),
-			lightFolder.add(this.state, 'ambientIntensity', 0, 2),
-			lightFolder.addColor(this.state, 'ambientColor'),
-			lightFolder.add(this.state, 'directIntensity', 0, 4), // TODO(#116)
-			lightFolder.addColor(this.state, 'directColor'),
-		].forEach((ctrl) => ctrl.onChange(() => this.updateLights()));
 
 		// Animation controls.
 		this.animFolder = gui.addFolder('Animation');
