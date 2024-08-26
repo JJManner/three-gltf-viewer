@@ -536,8 +536,7 @@ export class Viewer {
 
 		// Display controls.
 		const dispFolder = gui.addFolder('Display');
-		const envBackgroundCtrl = dispFolder.add(this.state, 'background');
-		envBackgroundCtrl.onChange(() => this.updateEnvironment());
+
 		const autoRotateCtrl = dispFolder.add(this.state, 'autoRotate');
 		autoRotateCtrl.onChange(() => this.updateDisplay());
 		const wireframeCtrl = dispFolder.add(this.state, 'wireframe');
@@ -560,13 +559,15 @@ export class Viewer {
 			environments.map((env) => env.name),
 		);
 		envMapCtrl.onChange(() => this.updateEnvironment());
+		const envBackgroundCtrl = lightFolder.add(this.state, 'background');
+		envBackgroundCtrl.onChange(() => this.updateEnvironment());
 		[
 			lightFolder.add(this.state, 'toneMapping', {
 				Linear: LinearToneMapping,
 				'ACES Filmic': ACESFilmicToneMapping,
 			}),
 			lightFolder.add(this.state, 'exposure', -10, 10, 0.01),
-			lightFolder.add(this.state, 'punctualLights').listen(),
+			lightFolder.add(this.state, 'punctualLights'),   // lightFolder.add(this.state, 'punctualLights').listen(),
 			lightFolder.add(this.state, 'ambientIntensity', 0, 2),
 			lightFolder.addColor(this.state, 'ambientColor'),
 			lightFolder.add(this.state, 'directIntensity', 0, 4), // TODO(#116)
