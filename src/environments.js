@@ -10,9 +10,21 @@ export const environments = [
 		path: null,
 	},
 	{
+		id: 'clear-sky',
+		name: 'Clear Sky',
+		path: 'drakensberg_solitary_mountain_puresky_1k.exr',
+		format: '.exr',
+	},
+	{
+		id: 'cloudy-sky',
+		name: 'Cloudy Sky',
+		path: 'kloofendal_48d_partly_cloudy_puresky_1k.exr',
+		format: '.exr',
+	},
+	{
 		id: 'venice-sunset',
 		name: 'Venice Sunset',
-		path: 'https://storage.googleapis.com/donmccurdy-static/venice_sunset_1k.exr',
+		path: 'venice_sunset_1k_x.exr',
 		format: '.exr',
 	},
 	{

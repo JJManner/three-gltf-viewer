@@ -67,7 +67,7 @@ export class Viewer {
 			environment:
 				options.preset === Preset.ASSET_GENERATOR
 					? environments.find((e) => e.id === 'footprint-court').name
-					: environments[2].name, // this defines the environment used, no 2 is the Venice map 
+					: environments[2].name, // this defines the environment used, no 2 is the Clear Sky
 			background: false,
 			playbackSpeed: 1.0,
 			actionStates: {},
