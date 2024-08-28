@@ -28,9 +28,15 @@ export const environments = [
 		format: '.exr',
 	},
 	{
-		id: 'footprint-court',
-		name: 'Footprint Court (HDR Labs)',
-		path: 'https://storage.googleapis.com/donmccurdy-static/footprint_court_2k.exr',
+		id: 'hansaplatz',
+		name: 'Hansaplatz',
+		path: 'hansaplatz_1k_x.exr',
+		format: '.exr',
+	},
+	{
+		id: 'ulmer-muenster',
+		name: 'Ulmer Muenster',
+		path: 'ulmer_muenster_1k.exr',
 		format: '.exr',
 	},
 ];
