@@ -1,10 +1,12 @@
-# glTF Viewer
+# glTF Viewer Modified from the Original
 
-Preview glTF 2.0 models in WebGL using three.js and a drag-and-drop interface.
+Preview glTF 2.0 models in WebGL using three.js and a drag-and-drop interface. 
 
-Viewer: [gltf-viewer.donmccurdy.com](https://gltf-viewer.donmccurdy.com/)
+This version has a simplified interface for a specific use and different .exr backgrounds.
 
-![screenshot](https://user-images.githubusercontent.com/1848368/31580352-b7354096-b101-11e7-86d7-f07677835812.png)
+Original Viewer: [gltf-viewer.donmccurdy.com](https://gltf-viewer.donmccurdy.com/)
+
+## [screenshot](https://user-images.githubusercontent.com/1848368/31580352-b7354096-b101-11e7-86d7-f07677835812.png)
 
 ## Quickstart
 
