@@ -6,14 +6,14 @@ This version has a simplified interface for a specific use and different .exr ba
 
 Original Viewer: [gltf-viewer.donmccurdy.com](https://gltf-viewer.donmccurdy.com/)
 
-[screenshot](/glTF_GUI_example.png)
-
 ## Quickstart
 
 ```
 npm install
 npm run dev
 ```
+
+![screenshot](/glTF_GUI_example.png)
 
 ## glTF 2.0 Resources
 
