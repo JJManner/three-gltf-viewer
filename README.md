@@ -6,7 +6,7 @@ This version has a simplified interface for a specific use and different .exr ba
 
 Original Viewer: [gltf-viewer.donmccurdy.com](https://gltf-viewer.donmccurdy.com/)
 
-## [screenshot](https://user-images.githubusercontent.com/1848368/31580352-b7354096-b101-11e7-86d7-f07677835812.png)
+[screenshot](/glTF_GUI_example.png)
 
 ## Quickstart
 
