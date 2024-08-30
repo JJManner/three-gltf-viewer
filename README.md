@@ -1,4 +1,4 @@
-# glTF Viewer with Simplified Interface 
+# glTF Viewer with a Simplified Interface 
 
 Preview glTF 2.0 models in WebGL using three.js and a drag-and-drop interface. 
 
