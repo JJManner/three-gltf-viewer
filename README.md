@@ -1,8 +1,8 @@
-# glTF Viewer with a Simplified Interface 
+# glTF Viewer with a Simplified User Interface 
 
 Preview glTF 2.0 models in WebGL using three.js and a drag-and-drop interface. 
 
-This version has a simplified interface for a specific use and different .exr backgrounds.
+This version has a simplified and re-organised user interface for a specific use and some new .exr backgrounds. Background visibility can be activated easier, when it is moved right below the Lighting HDRI environment selection. Also a - **_Help_** - section has been added to inform users how to use the mouse controls. 
 
 Original Viewer: [gltf-viewer.donmccurdy.com](https://gltf-viewer.donmccurdy.com/)
 
