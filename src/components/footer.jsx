@@ -4,7 +4,7 @@ import { REVISION } from 'three';
 /** @jsx vhtml */
 
 export function Footer() {
-	return (
+	/*return (
 		<footer>
 			<a class="item" target="_blank" href="https://threejs.org/">
 				three.js r{REVISION}
@@ -30,5 +30,5 @@ export function Footer() {
 				github
 			</a>
 		</footer>
-	);
+	);*/
 }
