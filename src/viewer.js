@@ -547,6 +547,7 @@ export class Viewer {
 		[
 			lightFolder.add(this.state, 'exposure', -10, 10, 0.01),
 			lightFolder.add(this.state, 'punctualLights').listen(),
+			lightFolder.add(this.scene, 'backgroundBlurriness', 0, 1, 0.01), //blurriness
 			lightFolder.add(this.state, 'toneMapping', {
 				Linear: LinearToneMapping,
 				'ACES Filmic': ACESFilmicToneMapping,
