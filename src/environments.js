@@ -39,10 +39,4 @@ export const environments = [
 		path: 'ulmer_muenster_1k.exr',
 		format: '.exr',
 	},
-	{
-		id: 'ulmer-muenster2',
-		name: 'Ulmer Muenster2',
-		path: 'ulmer_muenster_1k_flip.exr',
-		format: '.exr',
-	},
 ];
