@@ -417,6 +417,8 @@ export class Viewer {
 
 		this.getCubeMapTexture(environment).then(({ envMap }) => {
 			this.scene.environment = envMap;
+			this.scene.backgroundRotation.y = Math.PI;  // both of these are required (backgroundRotation AND environmentRotation) Otherwise lighting environemnt is not correct. Instructions on this matter - https://threejs.org/docs/#api/en/scenes/Scene.environmentRotation - are a bit misleading
+			this.scene.environmentRotation.y = Math.PI;
 			this.scene.background = this.state.background ? envMap : this.backgroundColor;
 		});
 	}
