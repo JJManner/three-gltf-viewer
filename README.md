@@ -13,7 +13,7 @@ npm install
 npm run dev
 ```
 
-![screenshot](/glTF_GUI_example.png)
+![screenshot](/glTF_GUI_example_2.png)
 
 ## glTF 2.0 Resources
 
