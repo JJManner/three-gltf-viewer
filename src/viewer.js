@@ -76,7 +76,7 @@ export class Viewer {
 			skeleton: false,
 			grid: false,
 			autoRotate: false,
-			BGRotation: 0,
+			bgRotation: 0,
 			backgroundBlurriness: 0,
 
 			// Lights
@@ -419,8 +419,8 @@ export class Viewer {
 
 		this.getCubeMapTexture(environment).then(({ envMap }) => {
 			this.scene.environment = envMap;
-			this.scene.backgroundRotation.y = this.state.BGRotation * (Math.PI/180); 
-			this.scene.environmentRotation.y = this.state.BGRotation * (Math.PI/180); 
+			this.scene.backgroundRotation.y = this.state.bgRotation * (Math.PI/180); 
+			this.scene.environmentRotation.y = this.state.bgRotation * (Math.PI/180); 
 			// NOTE! both of these are required (scene.backgroundRotation AND scene.environmentRotation) Otherwise lighting environemnt is not correct. Instructions on this matter - https://threejs.org/docs/#api/en/scenes/Scene.environmentRotation - are a really misleading.
 			this.scene.background = this.state.background ? envMap : this.backgroundColor;
 		});
@@ -551,7 +551,7 @@ export class Viewer {
 		// rotate environment angle selector start
 		const envBackRotation = lightFolder.add(
 			this.state, 
-			'BGRotation', 
+			'bgRotation', 
 			-180,180,0.01,
 	
 		); 

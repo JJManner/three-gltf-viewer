@@ -4,7 +4,7 @@ import { REVISION } from 'three';
 /** @jsx vhtml */
 
 export function Footer() {
-	/*return (
+	return (
 		<footer>
 			<a class="item" target="_blank" href="https://threejs.org/">
 				three.js r{REVISION}
@@ -14,21 +14,9 @@ export function Footer() {
 				|
 			</span>
 
-			<a
-				class="item"
-				target="_blank"
-				href="https://github.com/donmccurdy/three-gltf-viewer/issues/new"
-			>
-				help & feedback
-			</a>
-
-			<span class="separator" aria-hidden="true">
-				|
-			</span>
-
-			<a class="item" target="_blank" href="https://github.com/donmccurdy/three-gltf-viewer">
+			<a class="item" target="_blank" href="https://github.com/JJManner/three-gltf-viewer">
 				github
 			</a>
 		</footer>
-	);*/
+	);
 }
