@@ -76,6 +76,8 @@ export class Viewer {
 			skeleton: false,
 			grid: false,
 			autoRotate: false,
+			BGRotation: 0,
+			backgroundBlurriness: 0,
 
 			// Lights
 			punctualLights: true,
@@ -417,8 +419,9 @@ export class Viewer {
 
 		this.getCubeMapTexture(environment).then(({ envMap }) => {
 			this.scene.environment = envMap;
-			this.scene.backgroundRotation.y = Math.PI;  // both of these are required (backgroundRotation AND environmentRotation) Otherwise lighting environemnt is not correct. Instructions on this matter - https://threejs.org/docs/#api/en/scenes/Scene.environmentRotation - are a bit misleading
-			this.scene.environmentRotation.y = Math.PI;
+			this.scene.backgroundRotation.y = this.state.BGRotation * (Math.PI/180); 
+			this.scene.environmentRotation.y = this.state.BGRotation * (Math.PI/180); 
+			// NOTE! both of these are required (scene.backgroundRotation AND scene.environmentRotation) Otherwise lighting environemnt is not correct. Instructions on this matter - https://threejs.org/docs/#api/en/scenes/Scene.environmentRotation - are a really misleading.
 			this.scene.background = this.state.background ? envMap : this.backgroundColor;
 		});
 	}
@@ -545,6 +548,15 @@ export class Viewer {
 		);
 		envMapCtrl.onChange(() => this.updateEnvironment());
 		const envBackgroundCtrl = lightFolder.add(this.state, 'background');
+		// rotate environment angle selector start
+		const envBackRotation = lightFolder.add(
+			this.state, 
+			'BGRotation', 
+			-180,180,0.01,
+	
+		); 
+		envBackRotation.onChange(() => this.updateEnvironment());
+		// rotate environment angle selector end
 		envBackgroundCtrl.onChange(() => this.updateEnvironment());
 		[
 			lightFolder.add(this.state, 'exposure', -10, 10, 0.01),
