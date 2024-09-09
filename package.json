@@ -1,8 +1,8 @@
 {
 	"private": true,
 	"version": "1.5.1",
-	"description": "Preview glTF models using three.js and a drag-and-drop interface.",
-	"author": "Don McCurdy <dm@donmccurdy.com> (https://www.donmccurdy.com)",
+	"description": "Preview glTF models using three.js and a drag-and-drop interface and environment rotation feature.",
+	"author": "Original author Don McCurdy <dm@donmccurdy.com> (https://www.donmccurdy.com), Joona Manner added environment rotation feature, new exr files and re-designed GUI",
 	"license": "MIT",
 	"main": "public/app.js",
 	"browserslist": [

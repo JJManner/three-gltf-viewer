@@ -14,7 +14,7 @@ export function Footer() {
 				|
 			</span>
 
-			<a class="item" target="_blank" href="https://github.com/JJManner/three-gltf-viewer">
+			<a class="item" target="_blank" href="https://github.com/JJManner/three-gltf-viewer-with-environment-rotation">
 				github
 			</a>
 		</footer>
